@@ -1,0 +1,78 @@
+cp 06_attach_org/ fff/ -r
+cd fff/attach/
+colcon build
+
+
+//test
+[new terminal]
+cd ws_moveit
+source install/setup.bash
+ros2 launch moveit2_tutorials move_group.launch.py
+
+[new terminal]
+source 1.sh
+
+//----
+source 1.sh
+sh rrr.sh
+
+//---
+ros2 pkg create --build-type ament_cmake attach
+
+# gcat add+
+find_package(rclcpp REQUIRED)
+find_package(moveit_ros_planning REQUIRED)
+find_package(rviz_visual_tools REQUIRED)
+find_package(moveit_ros_move_group REQUIRED)
+find_package(moveit_ros_planning_interface REQUIRED)
+find_package(graph_msgs REQUIRED)
+find_package(geometric_shapes REQUIRED)
+find_package(moveit_visual_tools REQUIRED)
+
+#find_package(geometry REQUIRED)
+# gcat add;
+
+include_directories(
+	include
+	/opt/ros/humble/include/graph_msgs
+)
+
+add_executable(exe02 src/move_group_interface_tutorial.cpp)
+
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/opt/ros/humble/lib")
+
+ament_target_dependencies(exe02
+  rclcpp
+  rviz_visual_tools
+  moveit_ros_planning    
+  moveit_ros_move_group
+  moveit_ros_planning_interface
+
+  moveit_visual_tools
+)
+
+install(TARGETS
+  exe02
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install (DIRECTORY
+	launch
+	DESTINATION share/${PROJECT_NAME}/
+)
+
+# gcat add;
+
+  <!-- gcat add+ -->
+  <build_depend>rclcpp</build_depend>
+  <build_depend>rviz_visual_tools</build_depend>
+  <build_depend>moveit_ros_planning</build_depend>  
+  <build_depend>moveit_ros_move_group</build_depend>   
+  <build_depend>moveit_ros_planning_interface</build_depend> 
+  <build_depend>graph_msgs</build_depend> 
+  <build_depend>geometric_shapes</build_depend> 
+  <build_depend> moveit_visual_tools</build_depend> 
+  <exec_depend>rclcpp</exec_depend>
+  <exec_depend>geometric_shapes</exec_depend>
+  <!-- gcat add; --> 

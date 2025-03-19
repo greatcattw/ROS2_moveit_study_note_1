@@ -1,0 +1,68 @@
+cp 01_hello_org/ aaa/ -r
+cd aaa/hello_cpp/
+colcon build
+
+
+//test
+[new terminal]
+source install/setup.bash
+ros2 run hello_cpp hello_cpp
+--------------
+
+
+
+mkdir mmdd
+cd mmdd
+
+ros2 pkg create  --build-type ament_cmake hello_cpp
+	ros2 pkg create hello_cpp --build-type ament_cmake --dependencies rclcpp
+//--------------------
+
+
+cp ../aaa/hello_cpp/src/hello_cpp.cpp hello_cpp/src/
+../aaa/hello_cpp/CMakeLists.txt hello_cpp/
+
+//--------------------gedit src/hello_cpp.cpp
+#include "rclcpp/rclcpp.hpp"
+
+class HelloWorldNode : public rclcpp::Node {
+public:
+    HelloWorldNode() : Node("hello_world_node") {
+        RCLCPP_INFO(this->get_logger(), "Hello, ROS 2!");
+    }
+};
+
+int main(int argc, char * argv[]) {
+    rclcpp::init(argc, argv);
+    rclcpp::spin(std::make_shared<HelloWorldNode>());
+    rclcpp::shutdown();
+    return 0;
+}
+
+//--------------------CmakeLists.txt
+
+cmake_minimum_required(VERSION 3.5)
+project(hello_cpp)
+
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+
+add_executable(hello_cpp src/hello_cpp.cpp)
+ament_target_dependencies(hello_cpp rclcpp)
+
+install(TARGETS
+  hello_cpp
+  DESTINATION lib/${PROJECT_NAME})
+
+ament_package()
+
+//--------------------
+
+
+
+colcon build
+		colcon build --packages-select hello_cpp
+
+source install/setup.bash
+
+ros2 run hello_cpp hello_cpp

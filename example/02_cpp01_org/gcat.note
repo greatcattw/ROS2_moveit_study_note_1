@@ -1,0 +1,24 @@
+cp 02_cpp01_org/ bbb/ -r
+cd bbb/cpp01_topic/
+colcon build
+
+//test
+[new terminal]
+source install/setup.bash
+ros2 run  cpp01_topic demo02_listener_str
+
+
+[new terminal]
+source install/setup.bash
+ros2 run cpp01_topic demo01_talker_str
+//---
+ros2 pkg create cpp01_topic  --build-type ament_cmake --dependencies rclcpp std_msgs base_interface_demo
+
+gedit src/demo01_talker_str.cpp
+
+
+colcon build
+
+ros2 run cpp01_topic demo02_listener_str
+
+ros2 run cpp01_topic demo01_talker_str

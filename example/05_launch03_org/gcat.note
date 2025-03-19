@@ -1,0 +1,70 @@
+cp 05_launch03_org/ eee/ -r
+cd eee/my_launch_pkg/
+colcon build
+
+//test
+[new terminal]
+source install/setup.bash
+ros2 launch my_launch_pkg my_node_launch.py
+
+[exe_pkg_03-1] [INFO] [1742195762.124712209] [my_node]: Hello, gcat !
+
+//----
+
+cd my_launch_pkg/my_node_launch.py
+
+//--- CMakeLists.txt
+
+
+# gcat add+
+find_package(rclcpp REQUIRED)
+# gcat add;
+
+# gcat add+
+add_executable(exe_pkg_03 src/my_node.cpp)
+ament_target_dependencies(exe_pkg_03 rclcpp)
+ 
+install (DIRECTORY
+	launch
+	DESTINATION share/${PROJECT_NAME}/
+	#DESTINATION .
+)
+install (TARGETS
+	exe_pkg_03
+	DESTINATION lib/${PROJECT_NAME}/
+)	
+# gcat add;
+
+//---package.xml
+none 
+
+//---my_node_launch.py
+
+from launch import LaunchDescription
+from launch_ros.actions import Node
+
+def generate_launch_description():
+	return LaunchDescription([
+		Node(
+			package='my_launch_pkg',
+			executable='exe_pkg_03',
+			#name='my_node',
+			output='screen',
+		),
+	])
+
+
+//---
+
+gedit CMakeLists.txt launch/my_node_launch.py
+
+colcon build --packages-select my_launch_pkg
+
+find -name my_node_launch.py
+find -name my_node
+//---test
+[new terminal]
+
+source install/setup.bash
+
+ros2 launch my_launch_pkg my_node_launch.py

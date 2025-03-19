@@ -1,0 +1,86 @@
+cp 03_next01_org/ ccc/ -r
+cd ccc/next01/
+colcon build 
+
+//test
+[new terminal]
+cd ws_moveit
+source install/setup.bash
+ros2 launch moveit2_tutorials move_group.launch.py
+
+[new terminal]
+source install/setup.bash
+ros2 run next01 exe01
+
+#press [next] button in RViz window
+
+//------------------
+
+ros2 pkg create --build-type ament_cmake next01
+
+//---CMakeLists.txt
+
+# gcat add+
+find_package(rclcpp REQUIRED)
+find_package(moveit_ros_planning REQUIRED)
+find_package(rviz_visual_tools REQUIRED)
+# gcat add;
+
+# gcat add+
+add_executable(exe01 src/planning_scene_ros_api_tutorial1.cpp)
+
+ament_target_dependencies(exe01
+  rclcpp
+  moveit_ros_planning  
+  rviz_visual_tools
+)
+
+install(TARGETS
+  exe01
+  DESTINATION lib/${PROJECT_NAME}
+)
+# gcat add;
+
+//---package.xml
+
+  <!-- gcat add+ -->
+  <build_depend>rclcpp</build_depend>
+  <build_depend>moveit_ros_planning</build_depend>
+  <build_depend>rviz_visual_tools</build_depend>  
+  <!-- gcat add; -->
+  
+//---
+  
+colcon build --packages-select next01
+  
+//--- show arm  
+[new terminal]  
+cd ws_moveit
+source install/setup.bash
+ros2 launch moveit2_tutorials move_group.launch.py 
+
+//--- show arm 
+[new terminal]  
+cd ~/.../next01
+source install/setup.bash
+ros2 run next01 exe01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
