@@ -146,8 +146,6 @@ sudo apt update && rosdep install -r --from-paths . --ignore-src --rosdistro $RO
 cd ~/ws_moveit  
 sudo su   //I don't know why need su
 colcon build --mixin release --executor sequential  
-<br>
-wait a little time
-<br>
+### wait a little time
 source /home/gcat/ws_moveit/install/setup.bash  
 ros2 launch moveit2_tutorials demo.launch.py rviz_config:=panda_moveit_config_demo_empty.rviz  
