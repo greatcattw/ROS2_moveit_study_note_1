@@ -115,6 +115,7 @@ ros2 launch moveit2_tutorials move_group.launch.py
 [new terminal]  
 source 1.sh  
 sh rrr.sh  
+<br>
 press [next] button in RViz window to run.  
 <br>
 ![pic](pic/ex6.png)<br>
