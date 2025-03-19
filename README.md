@@ -42,7 +42,7 @@ cp 03_next01_org/ ccc/ -r
 cd ccc/next01/  
 colcon build   
 <br>
-#### test
+### test
 [new terminal]   
 cd ~/ws_moveit  
 source install/setup.bash   
@@ -54,9 +54,9 @@ ros2 run next01 exe01
 <br>
 press [next] button in RViz window to close program.  
 <br>
-![pic](pic/ex3a)<br>
+![pic](pic/ex3a.png)<br>
 <br>
-![pic](pic/ex3b)<br>
+![pic](pic/ex3b.png)<br>
 <br>
 
 
