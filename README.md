@@ -12,7 +12,7 @@ colcon build
 source install/setup.bash  
 ros2 run hello_cpp hello_cpp  
 <br>
-![pic](pic/ex1.png<br>
+![pic](pic/ex1.png)<br>
 <br>
 
 ## ex2 : listener and talker
@@ -36,24 +36,30 @@ ros2 run cpp01_topic demo01_talker_str
 <br>
 
 
-====ex3
-#build
-cp 03_next01_org/ ccc/ -r
-cd ccc/next01/
-colcon build 
-
-#test
-[new terminal]
-cd ~/ws_moveit
-source install/setup.bash
-ros2 launch moveit2_tutorials move_group.launch.py
-
+## ex3 : build [next] button 
+### build
+cp 03_next01_org/ ccc/ -r  
+cd ccc/next01/  
+colcon build   
+<br>
+#### test
+[new terminal]   
+cd ~/ws_moveit  
+source install/setup.bash  
+ros2 launch moveit2_tutorials move_group.launch.py  
 
 [new terminal]
 source install/setup.bash
 ros2 run next01 exe01
+<br>
+press [next] button in RViz window to close program.  
+<br>
+![pic](pic/ex3a)<br>
+<br>
+![pic](pic/ex3b)<br>
+<br>
 
-#press [next] button in RViz window to close program.
+
 ====ex4
 #build
 cp 04_next02_org/ ddd/ -r
