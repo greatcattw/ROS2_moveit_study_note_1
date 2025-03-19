@@ -45,12 +45,12 @@ colcon build
 #### test
 [new terminal]   
 cd ~/ws_moveit  
-source install/setup.bash  
-ros2 launch moveit2_tutorials move_group.launch.py  
+source install/setup.bash   
+ros2 launch moveit2_tutorials move_group.launch.py   
 
 [new terminal]
-source install/setup.bash
-ros2 run next01 exe01
+source install/setup.bash  
+ros2 run next01 exe01  
 <br>
 press [next] button in RViz window to close program.  
 <br>
