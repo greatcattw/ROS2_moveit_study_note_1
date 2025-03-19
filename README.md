@@ -81,7 +81,8 @@ ros2 launch moveit2_tutorials move_group.launch.py
 [new terminal]  
 source install/setup.bash  
 ros2 run next02 exe02  
-#press [next] button in RViz window to run.  
+<br>
+press [next] button in RViz window to run.  
 <br>
 ![pic](pic/ex4.png)<br>
 <br>
