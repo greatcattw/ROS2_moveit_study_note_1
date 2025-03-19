@@ -1,7 +1,7 @@
 # ROS2_moveit_study_note_1
 ROS2 moveit example for quickly learning it. Ubuntu 22, humble.  
 
-## ex1 : print string
+## ex1 : "ros2 run" example, print string
 ### build
 cp 01_hello_org/ aaa/ -r  
 cd aaa/hello_cpp/  
@@ -81,19 +81,19 @@ ros2 run next02 exe02
 ![pic](pic/ex4.png)<br>
 <br>
 
-## ex5 : 
-#build
-cp 05_launch03_org/ eee/ -r
-cd eee/my_launch_pkg/
-colcon build
-
-#test
-[new terminal]
-source install/setup.bash
-ros2 launch my_launch_pkg my_node_launch.py
-
-
-
+## ex5 : "ros2 launch" example
+### build
+cp 05_launch03_org/ eee/ -r  
+cd eee/my_launch_pkg/  
+colcon build  
+<br>
+### test
+[new terminal]  
+source install/setup.bash  
+ros2 launch my_launch_pkg my_node_launch.py  
+<br>
+![pic](pic/ex5.png)<br>
+<br>
 ## ex6 : build part of move_group_interface
 ### build
 cp 06_attach_org/ fff/ -r 
