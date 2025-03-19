@@ -1,7 +1,7 @@
 # ROS2_moveit_study_note_1
 ROS2 moveit examples for quickly learning it. Ubuntu 22, humble.  
 Learning attach/detach.  
-Must install moveit2 tutorial prior.
+Must install ROS2 and moveit2 tutorial prior.
 <br>
 ![pic](pic/001.png)<br>
 <br>
@@ -120,3 +120,34 @@ press [next] button in RViz window to run.
 <br>
 ![pic](pic/ex6.png)<br>
 <br>
+
+## Note : install Moveit2 tutorial
+source /opt/ros/humble/setup.bash  
+printenv ROS_DISTRO     //check ROS2 verson  
+humble  
+
+
+sudo apt install python3-rosdep  
+sudo rosdep init  
+rosdep update  
+sudo apt dist-upgrade  
+sudo apt install python3-colcon-common-extensions  
+sudo apt install python3-colcon-mixin  
+sudo colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml  
+sudo colcon mixin update default  
+sudo apt install python3-vcstool  
+<br>
+mkdir -p ~/ws_moveit/src  
+cd ~/ws_moveit/src  
+git clone --branch humble  https://github.com/moveit/moveit2_tutorials  
+vcs import --recursive < moveit2_tutorials/moveit2_tutorials.repos  
+sudo apt update && rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y  
+<br>
+cd ~/ws_moveit  
+sudo su   //I don't know why need su
+colcon build --mixin release --executor sequential  
+<br>
+wait a little time
+<br>
+source /home/gcat/ws_moveit/install/setup.bash  
+ros2 launch moveit2_tutorials demo.launch.py rviz_config:=panda_moveit_config_demo_empty.rviz  
