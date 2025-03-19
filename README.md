@@ -36,7 +36,7 @@ ros2 run cpp01_topic demo01_talker_str
 <br>
 
 
-## ex3 : build [next] button 
+## ex3 : build [next] button, part of moveit2 tutorial of 
 ### build
 cp 03_next01_org/ ccc/ -r  
 cd ccc/next01/  
@@ -60,25 +60,28 @@ press [next] button in RViz window to close program.
 <br>
 
 
-====ex4
-#build
-cp 04_next02_org/ ddd/ -r
-cd ddd/next02/
-colcon build
+## ex4 : single build moveit2 tutuorial example of 
+### build
+cp 04_next02_org/ ddd/ -r  
+cd ddd/next02/  
+colcon build  
+<br>
+### test
+[new terminal]  
+cd ~/ws_moveit  
+source install/setup.bash  
+ros2 launch moveit2_tutorials move_group.launch.py  
+<br>
 
-#test
-[new terminal]
-cd ~/ws_moveit
-source install/setup.bash
-ros2 launch moveit2_tutorials move_group.launch.py
+[new terminal]  
+source install/setup.bash  
+ros2 run next02 exe02  
+#press [next] button in RViz window to run.  
+<br>
+![pic](pic/ex4.png)<br>
+<br>
 
-
-[new terminal]
-source install/setup.bash
-ros2 run next02 exe02
-#press [next] button in RViz window to run.
-
-====ex5
+## ex5 : 
 #build
 cp 05_launch03_org/ eee/ -r
 cd eee/my_launch_pkg/
@@ -91,19 +94,22 @@ ros2 launch my_launch_pkg my_node_launch.py
 
 
 
-====ex6
-#build
-cp 06_attach_org/ fff/ -r
-cd fff/attach/
-colcon build
-
-#test
-[new terminal]
-cd ~/ws_moveit
-source install/setup.bash
-ros2 launch moveit2_tutorials move_group.launch.py
-
-[new terminal]
-source 1.sh
-sh rrr.sh
-#press [next] button in RViz window to run.
+## ex6 : build part of move_group_interface
+### build
+cp 06_attach_org/ fff/ -r 
+cd fff/attach/ 
+colcon build 
+<br>
+### test
+[new terminal]  
+cd ~/ws_moveit  
+source install/setup.bash  
+ros2 launch moveit2_tutorials move_group.launch.py  
+<br>
+[new terminal]  
+source 1.sh  
+sh rrr.sh  
+press [next] button in RViz window to run.  
+<br>
+![pic](pic/ex6.png)<br>
+<br>
