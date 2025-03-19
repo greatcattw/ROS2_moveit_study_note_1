@@ -1,5 +1,10 @@
 # ROS2_moveit_study_note_1
-ROS2 moveit example for quickly learning it. Ubuntu 22, humble.  
+ROS2 moveit examples for quickly learning it. Ubuntu 22, humble.  
+Learning attach/detach.  
+Must install moveit2 tutorial prior.
+<br>
+![pic](pic/001.png)<br>
+<br>
 
 ## ex1 : "ros2 run" example, print string
 ### build
@@ -36,7 +41,7 @@ ros2 run cpp01_topic demo01_talker_str
 <br>
 
 
-## ex3 : build [next] button, part of moveit2 tutorial of 
+## ex3 : build [next] button, part of moveit2 tutorial planning_scene_ros_api
 ### build
 cp 03_next01_org/ ccc/ -r  
 cd ccc/next01/  
@@ -60,7 +65,7 @@ press [next] button in RViz window to close program.
 <br>
 
 
-## ex4 : single build moveit2 tutuorial example of 
+## ex4 : single build moveit2 tutuorial example of planning_scene_ros_api
 ### build
 cp 04_next02_org/ ddd/ -r  
 cd ddd/next02/  
