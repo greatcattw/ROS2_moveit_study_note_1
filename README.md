@@ -5,7 +5,11 @@ Must install ROS2 and moveit2 tutorial prior.
 <br>
 ![pic](pic/001.png)<br>
 <br>
-
+## dpkg needed
+sudo apt-get install ros-humble-moveit-visual-tools  
+sudo apt-get install ros-humble-moveit-runtime  
+sudo apt-get install ros-humble-moveit-configs-utils  
+<br>
 ## ex1 : "ros2 run" example, print string
 ### build
 cp 01_hello_org/ aaa/ -r  
@@ -102,8 +106,8 @@ ros2 launch my_launch_pkg my_node_launch.py
 <br>
 ## ex6 : build part of move_group_interface
 ### build
-cp 06_attach_org/ fff/ -r 
-cd fff/attach/ 
+cp 06_attach_org/ fff/ -r  
+cd fff/attach/  
 colcon build 
 <br>
 ### test
