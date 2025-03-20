@@ -145,7 +145,7 @@ vcs import --recursive < moveit2_tutorials/moveit2_tutorials.repos
 sudo apt update && rosdep install -r --from-paths . --ignore-src --rosdistro $ROS_DISTRO -y  
 <br>
 cd ~/ws_moveit  
-sudo su   //I don't know why need su
+sudo su   //I don't know why need su  
 colcon build --mixin release --executor sequential  
 ### wait a little time
 source /home/gcat/ws_moveit/install/setup.bash  
