@@ -151,6 +151,6 @@ colcon build --mixin release --executor sequential
 ...
 ### test
 [new terminal]  
-cd ~/ws_moveit
+cd ~/ws_moveit  
 source install/setup.bash  
 ros2 launch moveit2_tutorials demo.launch.py rviz_config:=panda_moveit_config_demo_empty.rviz  
