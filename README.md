@@ -148,5 +148,9 @@ cd ~/ws_moveit
 sudo su   //I don't know why need su  
 colcon build --mixin release --executor sequential  
 ### wait a little time
-source /home/gcat/ws_moveit/install/setup.bash  
+<br>
+### test
+[new terminal]  
+cd ~/ws_moveit
+source install/setup.bash  
 ros2 launch moveit2_tutorials demo.launch.py rviz_config:=panda_moveit_config_demo_empty.rviz  
