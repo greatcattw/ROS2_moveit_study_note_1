@@ -148,7 +148,7 @@ cd ~/ws_moveit
 sudo su   //I don't know why need su  
 colcon build --mixin release --executor sequential  
 ### wait a little time
-<br>
+...
 ### test
 [new terminal]  
 cd ~/ws_moveit
