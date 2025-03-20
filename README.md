@@ -1,7 +1,6 @@
-# In progress ...
 # ROS2_moveit_study_note_1
 ROS2 moveit examples for quickly learning it. Ubuntu 22, humble.  
-Learning attach/detach.  
+Learning attach/detach, move_group  
 Must install ROS2 and moveit2 tutorial prior.
 <br>
 ![pic](pic/001.png)<br>
